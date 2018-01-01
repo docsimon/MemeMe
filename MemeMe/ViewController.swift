@@ -56,7 +56,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        // Move the view only if the bootm textfield is the one that
+        // Move the view only if the bottom textfield is the one that
         // triggers the keyboard
         if self.bottomTextField.isFirstResponder{
             view.frame.origin.y = -getKeyboardHeight(notification)
@@ -200,4 +200,3 @@ extension ViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
-
