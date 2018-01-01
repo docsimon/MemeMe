@@ -15,6 +15,8 @@
 		CA282E8E1FFACBC700A60E06 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA282E8D1FFACBC700A60E06 /* Meme.swift */; };
 		CA282E901FFACFC500A60E06 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA282E8F1FFACFC500A60E06 /* TableViewController.swift */; };
 		CA282E921FFADD7D00A60E06 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA282E911FFADD7D00A60E06 /* CustomTableViewCell.swift */; };
+		CA282E941FFAE29000A60E06 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA282E931FFAE29000A60E06 /* CustomCollectionViewCell.swift */; };
+		CA282E961FFAE31600A60E06 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA282E951FFAE31600A60E06 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		CA282E8D1FFACBC700A60E06 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		CA282E8F1FFACFC500A60E06 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		CA282E911FFADD7D00A60E06 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		CA282E931FFAE29000A60E06 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		CA282E951FFAE31600A60E06 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				CA282E8D1FFACBC700A60E06 /* Meme.swift */,
 				CA282E8F1FFACFC500A60E06 /* TableViewController.swift */,
 				CA282E911FFADD7D00A60E06 /* CustomTableViewCell.swift */,
+				CA282E931FFAE29000A60E06 /* CustomCollectionViewCell.swift */,
+				CA282E951FFAE31600A60E06 /* CollectionViewController.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -146,8 +152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA282E8E1FFACBC700A60E06 /* Meme.swift in Sources */,
+				CA282E941FFAE29000A60E06 /* CustomCollectionViewCell.swift in Sources */,
 				CA282E921FFADD7D00A60E06 /* CustomTableViewCell.swift in Sources */,
 				CA282E7A1FFAC97500A60E06 /* AppDelegate.swift in Sources */,
+				CA282E961FFAE31600A60E06 /* CollectionViewController.swift in Sources */,
 				CA282E8C1FFACA9700A60E06 /* ViewController.swift in Sources */,
 				CA282E901FFACFC500A60E06 /* TableViewController.swift in Sources */,
 			);

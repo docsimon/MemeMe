@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     let cellHeight: CGFloat = 150
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Sent Memes"
+        navigationItem.title = "Sent Memes"
     }
     
     override func viewWillAppear(_ animated: Bool) {
