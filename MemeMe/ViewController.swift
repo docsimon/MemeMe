@@ -95,12 +95,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
         self.shareButton.isEnabled = true
         
+    }
+    
+    func addMemeToSentMemes(meme: Meme){
         // Add it to the memes array in the Application Delegate
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
-        if let meme = meme {
-            appDelegate.memes.append(meme)
-        }
+        appDelegate.memes.append(meme)
     }
     
     func setButtons(hidden: Bool){
@@ -127,6 +128,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if !completed {
                 return
             }
+            if let meme = self?.meme {
+                self?.addMemeToSentMemes(meme: meme)
+            }
             self?.showAlert(title: "Image saved!", msg: "The image has been saved in the photo Library 😎")
         }
     }
@@ -142,6 +146,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     @IBAction func cancelButton(_ sender: Any) {
         cancel()
+        dismiss(animated: true, completion: nil)
     }
 }
 
