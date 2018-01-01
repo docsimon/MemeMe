@@ -27,10 +27,10 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         let meme = appDelegate.memes[indexPath.row]
-        cell.textLabel?.text = meme.topText + "..." + meme.bottomText
-        cell.imageView?.image = meme.memedImage
+        cell.customLabel.text = meme.topText + "..." + meme.bottomText
+        cell.customImageView.image = meme.memedImage
         return cell
     }
     

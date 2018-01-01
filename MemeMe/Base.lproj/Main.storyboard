@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,13 +20,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="200" id="jay-2k-olZ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="153" id="jay-2k-olZ" customClass="CustomTableViewCell" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="153"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jay-2k-olZ" id="tdi-9d-K5f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="152.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zaQ-I9-VyN">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="152.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="9kf-XX-UV9"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpk-9w-PAS">
+                                            <rect key="frame" x="158" y="44" width="201" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Dpk-9w-PAS" firstAttribute="top" secondItem="tdi-9d-K5f" secondAttribute="topMargin" constant="33" id="0pq-34-iFf"/>
+                                        <constraint firstItem="zaQ-I9-VyN" firstAttribute="leading" secondItem="tdi-9d-K5f" secondAttribute="leading" id="6ad-IF-RYK"/>
+                                        <constraint firstItem="Dpk-9w-PAS" firstAttribute="leading" secondItem="zaQ-I9-VyN" secondAttribute="trailing" constant="8" id="8hM-Ai-Yzo"/>
+                                        <constraint firstItem="Dpk-9w-PAS" firstAttribute="trailing" secondItem="tdi-9d-K5f" secondAttribute="trailingMargin" id="dYr-35-PG1"/>
+                                        <constraint firstItem="zaQ-I9-VyN" firstAttribute="top" secondItem="tdi-9d-K5f" secondAttribute="top" id="ohh-1P-vQJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="zaQ-I9-VyN" secondAttribute="bottom" id="p0A-hW-xzX"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="customImageView" destination="zaQ-I9-VyN" id="pGF-fP-fhu"/>
+                                    <outlet property="customLabel" destination="Dpk-9w-PAS" id="eeR-9M-U3E"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -107,7 +134,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jbg-Xf-ow6" firstAttribute="top" secondItem="XQl-LI-n7r" secondAttribute="top" id="3hn-gd-67b"/>
                             <constraint firstItem="jbg-Xf-ow6" firstAttribute="trailing" secondItem="Au6-6u-PH2" secondAttribute="trailing" id="Aji-PZ-WIA"/>
