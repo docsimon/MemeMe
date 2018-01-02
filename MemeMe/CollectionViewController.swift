@@ -16,7 +16,7 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "Sent Memes"
         let space:CGFloat = 3.0
         let width = (view.frame.size.width - (2 * space)) / 3.0
         let height = (view.frame.size.height - (2 * space)) / 5.0
@@ -26,6 +26,7 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         collectionView?.reloadData()
     }
 
@@ -40,5 +41,14 @@ class CollectionViewController: UICollectionViewController {
         let meme = appDelegate.memes[indexPath.item]
         cell.customImageView.image = meme.memedImage
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let destVC = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailViewController
+        let meme = appDelegate.memes[indexPath.row]
+        destVC.memedImage = meme.memedImage
+        if let navigationController = navigationController{
+            navigationController.pushViewController(destVC, animated: true)
+        }
     }
 }

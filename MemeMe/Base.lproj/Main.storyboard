@@ -27,7 +27,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="152.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zaQ-I9-VyN">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zaQ-I9-VyN">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="152.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="9kf-XX-UV9"/>
@@ -94,7 +94,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xpf-65-uQV">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xpf-65-uQV">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         </imageView>
                                     </subviews>
@@ -130,10 +130,39 @@
             </objects>
             <point key="canvasLocation" x="-386.39999999999998" y="752.47376311844084"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
+        <scene sceneID="IB9-DZ-4zX">
+            <objects>
+                <viewController storyboardIdentifier="DetailVC" id="5OG-bL-4ju" customClass="DetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="24l-l0-ngW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-Zw-vvX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Khr-Zw-vvX" firstAttribute="bottom" secondItem="LsA-zs-vxC" secondAttribute="bottom" id="8mO-Xf-EGd"/>
+                            <constraint firstItem="Khr-Zw-vvX" firstAttribute="top" secondItem="24l-l0-ngW" secondAttribute="top" id="WRw-Mo-gxK"/>
+                            <constraint firstItem="Khr-Zw-vvX" firstAttribute="leading" secondItem="LsA-zs-vxC" secondAttribute="leading" id="pa6-Sy-8tF"/>
+                            <constraint firstItem="Khr-Zw-vvX" firstAttribute="trailing" secondItem="LsA-zs-vxC" secondAttribute="trailing" id="rlF-Th-RwX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LsA-zs-vxC"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Khr-Zw-vvX" id="HgK-Q7-VRF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PcC-UI-sQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728.79999999999995" y="703.89805097451278"/>
+        </scene>
+        <!--Meme Editor View Controller-->
         <scene sceneID="eUv-90-i7a">
             <objects>
-                <viewController id="Vei-Ox-nI1" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vei-Ox-nI1" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tgi-KQ-mBw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,6 +319,6 @@
         <image name="TableImage" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="R0v-Al-Koq"/>
+        <segue reference="ktQ-zn-32i"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,7 @@ class TableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
 
@@ -36,5 +37,14 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destVC = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! DetailViewController
+        let meme = appDelegate.memes[indexPath.row]
+        destVC.memedImage = meme.memedImage
+        if let navigationController = navigationController{
+            navigationController.pushViewController(destVC, animated: true)
+        }
     }
 }

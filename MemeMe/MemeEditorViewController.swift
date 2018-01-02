@@ -1,5 +1,5 @@
 //
-//  EditorViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMe
 //
 //  Created by doc on 01/01/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     var meme: Meme?
     let defaultTextTopButton = "TOP"
@@ -58,7 +58,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @objc func keyboardWillShow(_ notification:Notification) {
         // Move the view only if the bottom textfield is the one that
         // triggers the keyboard
-        if self.bottomTextField.isFirstResponder{
+        if bottomTextField.isFirstResponder{
             view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
@@ -80,8 +80,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Hide toolbar navbar and Buttons
         setButtons(hidden: true)
         // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         // Show toolbar navbar and Buttons
@@ -93,7 +93,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Create the meme
         let memedImage = generateMemedImage()
         meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
-        self.shareButton.isEnabled = true
+        shareButton.isEnabled = true
         
     }
     
@@ -105,15 +105,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func setButtons(hidden: Bool){
-        self.topToolbar.isHidden = hidden
-        self.bottomToolbar.isHidden = hidden
+        topToolbar.isHidden = hidden
+        bottomToolbar.isHidden = hidden
     }
     
     func cancel(){
-        self.topTextField.text = defaultTextTopButton
-        self.bottomTextField.text = defaultTextBottonButton
-        self.shareButton.isEnabled = false
-        self.imageView.image = nil
+        topTextField.text = defaultTextTopButton
+        bottomTextField.text = defaultTextBottonButton
+        shareButton.isEnabled = false
+        imageView.image = nil
     }
     
     @IBAction func shareMeme(_ sender: Any) {
@@ -138,11 +138,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func pickImage(_ sender: Any) {
         cancel()
         if (sender as! UIBarButtonItem).tag == 0 {
-            self.imagePicker.sourceType = .photoLibrary
+            imagePicker.sourceType = .photoLibrary
         }else {
-            self.imagePicker.sourceType = .camera
+            imagePicker.sourceType = .camera
         }
-        present(self.imagePicker, animated: true, completion: nil)
+        present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func cancelButton(_ sender: Any) {
         cancel()
@@ -151,12 +151,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 }
 
 // Protocol implementation
-extension ViewController {
+extension MemeEditorViewController {
     
     // Picker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.imageView.image = chosenImage
+            imageView.image = chosenImage
         }
         else {
             showAlert(title: "Error", msg: "Problem using this picture")
@@ -183,20 +183,20 @@ extension ViewController {
         if (textField.text?.isEmpty)!{
             textField.text = (textField.tag == 0 ? defaultTextTopButton : defaultTextBottonButton)
         }
-        if (self.bottomTextField.text != defaultTextBottonButton && self.topTextField.text != defaultTextTopButton && imageView.image != nil){
-            self.shareButton.isEnabled = true
+        if (bottomTextField.text != defaultTextBottonButton && topTextField.text != defaultTextTopButton && imageView.image != nil){
+            shareButton.isEnabled = true
         }
     }
 }
 
 // Alert managing
-extension ViewController {
+extension MemeEditorViewController {
     func showAlert(title: String, msg: String){
         let alert = UIAlertController()
         alert.title = title
         alert.message = msg
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 }
